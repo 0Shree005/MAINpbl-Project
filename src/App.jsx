@@ -3,25 +3,19 @@ import "./styles.css"
 import './App.css'
 import Home from "./pages/home";
 import Library from "./pages/library";
-
+import { Route, Routes } from "react-router-dom";
 
 function App() {
-  let component
-  switch(window.location.pathname){
-    
-    case "/vite-deploy-demo/home":
-      component = <Home/>
-      
-      break
-
-    case "/vite-deploy-demo/library":
-      component = <Library />
-      break    
-  }
   return (
     <>
       <Navbar />
-      <div className="container">{component}</div>
+      <div className="container">
+          <Routes>
+            <Route path="/vite-deploy-demo/home" element={<Home />} />
+            <Route path="/vite-deploy-demo/library" element={<Library   />} />
+
+          </Routes>
+      </div>
     </>
   )
 }
