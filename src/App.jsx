@@ -22,7 +22,6 @@ function App() {
     <>
       <Navbar />
       <div className="container">{component}</div>
-      
     </>
   )
 }
